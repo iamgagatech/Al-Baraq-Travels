@@ -16,4 +16,9 @@ export default defineConfig({
       "@": path.resolve(__dirname, "src"),
     },
   },
+  preview: {
+    // Allow the sandboxed live-preview host used during development/review.
+    // Has no effect on the static production build served by Vercel.
+    allowedHosts: [".e2b.app"],
+  },
 });

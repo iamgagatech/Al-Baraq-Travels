@@ -3,11 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Demo: this preview is intentionally kept out of search indexes.
+         Remove the noindex tag when the owner approves launch. -->
     <meta name="robots" content="noindex, nofollow" />
     <meta name="theme-color" content="#14372c" />
     <meta
       name="description"
-      content="Demo website for Al-Baraq Travels, a travel agency serving Ikeja and Lagos with flight bookings, visa assistance, hotels, transfers, holidays, and corporate travel."
+      content="Al-Baraq Travels is a travel agency in Ikeja, Lagos, offering visa assistance, international and domestic flight bookings, study-abroad support, hotel reservations, airport transfers, holidays and corporate travel. Call or WhatsApp +234 802 402 9843."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Al-Baraq Travels | Travel Services in Ikeja, Lagos" />
+    <meta
+      property="og:description"
+      content="Visa assistance, flight bookings, study-abroad support, hotels, transfers and holidays — planned with you from Ikeja, Lagos. Call or WhatsApp +234 802 402 9843."
+    />
+    <meta property="og:url" content="https://al-baraq-travels.vercel.app/" />
+    <meta
+      property="og:image"
+      content="https://images.pexels.com/photos/2387803/pexels-photo-2387803.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1200&q=80"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%2314372c'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' font-weight='bold' fill='%23d3ad5e' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E"
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,14 +33,74 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Al-Baraq Travels | Travel Services in Ikeja, Lagos</title>
+    <title>Al-Baraq Travels | Visa Assistance, Flights & Travel Agency in Ikeja, Lagos</title>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "TravelAgency",
         "name": "Al-Baraq Travels",
+        "url": "https://al-baraq-travels.vercel.app/",
         "telephone": "+2348024029843",
-        "areaServed": ["Ikeja", "Lagos", "Nigeria"]
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ikeja",
+          "addressRegion": "Lagos",
+          "addressCountry": "NG"
+        },
+        "areaServed": ["Ikeja", "Lagos", "Nigeria"],
+        "sameAs": [
+          "https://www.instagram.com/albaraqtravelsng/",
+          "https://www.linkedin.com/company/albaraqtravelsng/",
+          "https://www.facebook.com/albaraqtravel"
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Which travel services do you provide?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Visa consultancy and application assistance, international and domestic flight bookings, study-abroad assistance, corporate travel management, hotel reservations, airport transfers, and holiday packages and group tours. Document preparation and Statement of Purpose support are available as part of visa and study-abroad support."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you guarantee my visa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Visa decisions rest with the relevant embassy, high commission or government, and no agency can control them. What Al-Baraq can do is help you prepare a complete, well-documented application."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get a price for a trip?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Prices, fares and availability change constantly, so nothing is published here. Send your route, dates and number of travellers on WhatsApp or by phone, and the team will respond with current options."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I contact you on WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The listed number is WhatsApp-enabled — message +234 802 402 9843 or use any of the WhatsApp buttons on this page. You can also call the same number."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Where is the office?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Al-Baraq Travels is based in Ikeja, Lagos, Nigeria. The exact street address and opening hours will be published once confirmed — until then, call or WhatsApp ahead."
+            }
+          }
+        ]
       }
     </script>
   </head>

@@ -1,38 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  font-family: "Manrope", sans-serif;
-  color: #18342b;
-  background: #f7f2e8;
+@theme {
+  /* Al-Baraq palette — warm ivory surfaces, deep forest green, brass accents */
+  --color-forest: #14372c;
+  --color-forest-deep: #0d2a22;
+  --color-forest-ink: #091e18;
+  --color-ivory: #f7f2e8;
+  --color-sand: #eee6d6;
+  --color-clay: #d9cdb7;
+  --color-brass: #d3ad5e;
+  --color-brass-light: #e5c77f;
+  --color-brass-deep: #7d5e26;
+  --color-moss: #5a6e66;      /* body copy on ivory/sand */
+  --color-moss-dark: #40574f; /* body copy on clay */
+  --color-wa: #128c7e;        /* WhatsApp teal — icon-only surfaces (4.1:1) */
+  --color-wa-deep: #0e6f64;   /* WhatsApp buttons with white text (6.0:1) */
+  --color-wa-dark: #0a574e;   /* hover state for WhatsApp buttons */
+
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--color-ivory);
+  color: var(--color-forest-ink);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
 }
 
-html { scroll-behavior: smooth; }
-body { margin: 0; min-width: 320px; min-height: 100vh; background: #f7f2e8; }
-button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
-button, a { touch-action: manipulation; }
-::selection { color: #f7f2e8; background: #8c6a2b; }
-.font-display { font-family: "Cormorant Garamond", serif; }
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
 
-.edge-lit { position: relative; isolation: isolate; }
+button,
+a {
+  touch-action: manipulation;
+}
+
+::selection {
+  color: var(--color-ivory);
+  background: var(--color-brass-deep);
+}
+
+/* Hairline frame with a faint warm glow — used on dark editorial panels. */
+.edge-lit {
+  position: relative;
+  isolation: isolate;
+}
 .edge-lit::before {
-  position: absolute; inset: 0; z-index: -1; border: 1px solid rgba(211, 173, 94, 0.34);
-  content: ""; pointer-events: none; box-shadow: inset 0 0 46px rgba(211, 173, 94, 0.06);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 1px solid rgba(211, 173, 94, 0.34);
+  content: "";
+  pointer-events: none;
+  box-shadow: inset 0 0 46px rgba(211, 173, 94, 0.06);
 }
 
-.cta-sweep { position: relative; isolation: isolate; overflow: hidden; }
-.cta-sweep::before {
-  position: absolute; inset: 0; z-index: -1; background: #d3ad5e; content: "";
-  transform: scaleX(0); transform-origin: right; transition: transform 280ms ease;
+/* Brass sweep that fills CTA buttons on hover/focus. */
+.cta-sweep {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
-.cta-sweep:hover::before, .cta-sweep:focus-visible::before { transform: scaleX(1); transform-origin: left; }
-:focus-visible { outline: 3px solid #d3ad5e; outline-offset: 3px; }
+.cta-sweep::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: var(--color-brass);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 280ms ease;
+}
+.cta-sweep:hover::before,
+.cta-sweep:focus-visible::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+/* Native FAQ markers removed — custom chevron used instead. */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important; transition-duration: 0.01ms !important;
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }
