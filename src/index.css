@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Manrope", sans-serif;
+  color: #18342b;
+  background: #f7f2e8;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; min-height: 100vh; background: #f7f2e8; }
+button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+button, a { touch-action: manipulation; }
+::selection { color: #f7f2e8; background: #8c6a2b; }
+.font-display { font-family: "Cormorant Garamond", serif; }
+
+.edge-lit { position: relative; isolation: isolate; }
+.edge-lit::before {
+  position: absolute; inset: 0; z-index: -1; border: 1px solid rgba(211, 173, 94, 0.34);
+  content: ""; pointer-events: none; box-shadow: inset 0 0 46px rgba(211, 173, 94, 0.06);
+}
+
+.cta-sweep { position: relative; isolation: isolate; overflow: hidden; }
+.cta-sweep::before {
+  position: absolute; inset: 0; z-index: -1; background: #d3ad5e; content: "";
+  transform: scaleX(0); transform-origin: right; transition: transform 280ms ease;
+}
+.cta-sweep:hover::before, .cta-sweep:focus-visible::before { transform: scaleX(1); transform-origin: left; }
+:focus-visible { outline: 3px solid #d3ad5e; outline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important; transition-duration: 0.01ms !important;
+  }
+}
